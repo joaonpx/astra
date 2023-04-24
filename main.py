@@ -14,7 +14,9 @@ logger.setLevel(logging.CRITICAL)
 bot = ChatBot("Astra")
 
 trainer = ChatterBotCorpusTrainer(bot)
-trainer.train("chatterbot.corpus.portuguese")
+trainer.train(
+    "chatterbot.corpus.portuguese"
+)
 
 print("\n-------------------------------------------------------")
 tprint("astra", font="sub-zero")
@@ -30,7 +32,7 @@ while True:
     response = generateResponse(messageStatement)
 
     if userMessage.upper() == "TCHAU":
-        print("Astra: Até mais!")
+        print("Astra: até mais!")
         break
     else:
         print(f"Astra: {response}")
