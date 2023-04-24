@@ -1,11 +1,8 @@
-from textblob import TextBlob
+from chatterbot import ChatBot
+
+bot = ChatBot("Astra")
 
 def generateResponse(message):
-    testimonial = TextBlob(message)
+    response = bot.generate_response(message)
 
-    if testimonial.sentiment.polarity > 0.5:
-        return "I'm happy for that!"
-    elif testimonial.sentiment.polarity < -0.5:
-        return "Sinto muito que você esteja se sentindo assim."
-    else:
-        return "Não entendi o que você quis dizer. Poderia reformular a sua pergunta?"
+    return response

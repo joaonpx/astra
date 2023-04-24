@@ -1,19 +1,36 @@
 from art import tprint
+
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.conversation import Statement
+
 from response import generateResponse
 
-tprint("astra", font="sub-zero")
+import logging  
 
-print('To end the conversation type "goodbye".')
+logger = logging.getLogger() 
+logger.setLevel(logging.CRITICAL)
+
+bot = ChatBot("Astra")
+
+trainer = ChatterBotCorpusTrainer(bot)
+trainer.train("chatterbot.corpus.portuguese")
+
+print("\n-------------------------------------------------------")
+tprint("astra", font="sub-zero")
+print("-------------------------------------------------------")
+
+print('\nPara finalizar a conversa digite "tchau".\n')
 
 while True:
-    userMessage = input("You: ")
+    userMessage = input("Você: ")
 
-    response = generateResponse(userMessage)
+    messageStatement = Statement(userMessage)
 
-    if userMessage.upper() == "GOODBYE":
-        print("Astra: Goodbye! See you tomorow.")
+    response = generateResponse(messageStatement)
+
+    if userMessage.upper() == "TCHAU":
+        print("Astra: Até mais!")
         break
-    elif userMessage.upper() == "ASTRA":
-        print("Astra: Hi! How can I help you?")
     else:
         print(f"Astra: {response}")
