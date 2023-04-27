@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img style="width: 30%" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg">
+    <p>🤖 Astra</p>
 </h1>
 
 ## 🚀 Tecnologias
