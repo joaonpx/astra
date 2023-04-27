@@ -10,4 +10,4 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Astra é uma simples i.a para conversação.
+Astra é uma simples I.A para conversação.
